@@ -54,7 +54,7 @@ struct ContentView: View {
                    minimumValueLabel: {Text("0")},
                    maximumValueLabel: {Text("360")})
  
-            HStack{
+            HStack(spacing:0){
                 
                 VStack{
                     
@@ -75,10 +75,10 @@ struct ContentView: View {
                 .background(darkerColor)
             }
 
-            
+            Spacer()
             
         }
-     
+        .padding()
     }
 }
 
