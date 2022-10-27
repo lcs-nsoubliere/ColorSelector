@@ -10,9 +10,10 @@ import SwiftUI
 struct ContentView: View {
   
     //MARK: Stored properties
- 
     @State private var selectedHue = 0.0
     
+    //tracks the list of saved Palettes
+    @State private var savedPalettes: [SavedPalette] = [] //empyty
     //MARK: Computed properties
     
     //The selected hue express as a value betwene 0 and 1.0
@@ -75,6 +76,16 @@ struct ContentView: View {
                 .background(darkerColor)
             }
 
+            Button(action: {
+                //Create a new palette instance
+                let newPalette = SavedPalette(hue: hue)
+                //add it to the list
+                savedPalettes.append(newPalette)
+            },
+                   label: {
+                Text("Save")
+            })
+         
             Spacer()
             
         }
